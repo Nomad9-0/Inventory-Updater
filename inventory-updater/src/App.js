@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-// import NewCustomer from './components/Customers/NewCustomer';
-// import Customers from './components/Customers/Customers.js'
+import NewCustomer from './components/Customers/NewCustomer';
+import Customers from './components/Customers/Customers.js'
 import "./App.css"
 
 const DUMMY_DATA = [
@@ -9,95 +9,57 @@ const DUMMY_DATA = [
     name: "Austin Martin",
     product: 'Edibles',
     phoneNumber: '555-555-5555',
-    email: 'test@email.com'
+    email: 'test@email.com',
+    date: '7/19/2021'
   },
   {
     id: "p2",
     name: "Karen Smith",
     product: 'Topical',
     phoneNumber: '555-555-5556',
-    email: 'test2@email.com'
+    email: 'test2@email.com',
+    date: '6/11/2021'
   },
   {
     id: "p3",
     name: "Jesus Zepeda",
     product: 'Flower',
     phoneNumber: '555-555-5557',
-    email: 'test3@email.com'
+    email: 'test3@email.com',
+    date: '7/1/2021'
   },
   {
     id: "p4",
     name: "Mike Powell",
     product: 'Drink',
     phoneNumber: '555-555-5558',
-    email: 'test4@email.com'
+    email: 'test4@email.com',
+    date: '5/12/2020'
   },
   {
     id: "p5",
     name: "Zofia Kapkan",
     product: 'Hat',
     phoneNumber: '555-555-5559',
-    email: 'test5@email.com'
+    email: 'test5@email.com',
+    date: '7/15/2020'
   },
 ];
 
 const App = () => {
-  //const [customerWaitlist, setCustomerWaitlist] = useState(DUMMY_DATA);
+  const [customerWaitlist, setCustomerWaitlist] = useState(DUMMY_DATA);
 
-  // const addCustomerWaitlistHandler = customer => {
-  //   setCustomerWaitlist(prevCustomers => {
-  //     return [customer, ...prevCustomers]
-  //   });
-  // }
+  const addCustomerWaitlistHandler = customer => {
+    setCustomerWaitlist(prevCustomers => {
+      return [customer, ...prevCustomers]
+    });
+  }
 
   return (
     <div>
-      {/* <NewCustomer onAddExpense={addCustomerWaitlistHandler} /> */}
-      {/* <Customers items={customerWaitlist} /> */}
+      <NewCustomer onAddExpense={addCustomerWaitlistHandler} />
       <h1 className='title'>Customers on Waitlist</h1>
-      <div className='list'>
-        <ul className='card'>
-          <li>
-          <h2 className='name'>{DUMMY_DATA[0].name}</h2>
-          <p>Waiting for: {DUMMY_DATA[0].product}</p>
-          <p>Phone Number: {DUMMY_DATA[0].phoneNumber}</p>
-          <p> Email: {DUMMY_DATA[0].email}</p>
-          </li>
-        </ul>
-        <ul className='card'>
-          <li>
-          <h2 className='name'>{DUMMY_DATA[1].name}</h2>
-          <p>Waiting for: {DUMMY_DATA[1].product}</p>
-          <p>Phone Number: {DUMMY_DATA[1].phoneNumber}</p>
-          <p> Email: {DUMMY_DATA[1].email}</p>
-          </li>
-        </ul>
-        <ul className='card'>
-          <li>
-          <h2 className='name'>{DUMMY_DATA[2].name}</h2>
-          <p>Waiting for: {DUMMY_DATA[2].product}</p>
-          <p>Phone Number: {DUMMY_DATA[2].phoneNumber}</p>
-          <p> Email: {DUMMY_DATA[2].email}</p>
-          </li>
-        </ul>
-        <ul className='card'>
-          <li>
-          <h2 className='name'>{DUMMY_DATA[3].name}</h2>
-          <p>Waiting for: {DUMMY_DATA[3].product}</p>
-          <p>Phone Number: {DUMMY_DATA[3].phoneNumber}</p>
-          <p> Email: {DUMMY_DATA[3].email}</p>
-          </li>
-        </ul>
-        <ul className='card'>
-          <li>
-          <h2 className='name'>{DUMMY_DATA[4].name}</h2>
-          <p>Waiting for: {DUMMY_DATA[4].product}</p>
-          <p>Phone Number: {DUMMY_DATA[4].phoneNumber}</p>
-          <p> Email: {DUMMY_DATA[4].email}</p>
-          </li>
-        </ul>
-      </div>
-
+      <Customers items={customerWaitlist}/>
     </div>
   );
 }
