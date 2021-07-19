@@ -13,7 +13,8 @@ const Customers = (props) => {
     }
 
     const filteredCustomers = props.items.filter(customer => {
-    //    return customer.date.getFullYear().toString() === filteredYear;
+       //return customer.date.getFullYear().toString() === filteredYear;
+       console.log('date');
     })
 
     return(
