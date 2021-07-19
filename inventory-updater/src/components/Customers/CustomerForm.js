@@ -2,17 +2,19 @@ import React, { useState } from 'react';
 import './CustomerForm.css';
 
 const CustomerForm = (props) => {
-    const [enteredTitle, setEnteredTitle] = useState('');
-    const [enteredAmount, setEnteredAmount] = useState('');
+    const [enteredName, setEnteredName] = useState('');
+    const [enteredProduct, setEnteredProduct] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
+    const [enteredPhoneNumber, setEnteredPhoneNumber] = useState('');
+    const [enteredEmail, setEnteredEmail] = useState('');
     // const [userInput, setUserInput] = useState({
     //     enteredTitle: '',
     //     enteredAmount: '',
     //     enteredDate: ''
     // });
     
-    const titleChangeHandler = (event) => {
-        setEnteredTitle(event.target.value);
+    const nameChangeHandler = (event) => {
+        setEnteredName(event.target.value);
         // setUserInput({
         //     ...userInput,
         //     enteredTitle: event.target.value
@@ -22,8 +24,8 @@ const CustomerForm = (props) => {
         // });
     };
 
-    const amountChangeHandler = (event) => {
-        setEnteredAmount(event.target.value);
+    const productChangeHandler = (event) => {
+        setEnteredProduct(event.target.value);
         // setUserInput({
         //     ...userInput,
         //     enteredAmount: event.target.value
@@ -38,38 +40,56 @@ const CustomerForm = (props) => {
         // })
     };
 
+    const phoneNumberChangeHandler = (event) => {
+        setEnteredPhoneNumber(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target.value
+        // })
+    };
+
+    const emailChangeHandler = (event) => {
+        setEnteredEmail(event.target.value);
+        // setUserInput({
+        //     ...userInput,
+        //     enteredAmount: event.target.value
+        // })
+    };
+
     const submitHandler = (event) => {
         event.preventDefault();
-        const expenseData = {
-            title: enteredTitle,
-            amount: +enteredAmount,
-            date: new Date(enteredDate)
+        const customerData = {
+            name: enteredName,
+            product: enteredProduct,
+            date: new Date(enteredDate),
+            phonenumber: enteredPhoneNumber,
+            email: enteredEmail
         };
-        props.onSaveExpenseData(expenseData);
-        setEnteredTitle('');
-        setEnteredAmount('');
+        props.onSaveCustomerData(customerData);
+        setEnteredName('');
+        setEnteredProduct('');
         setEnteredDate('');
+        setEnteredPhoneNumber('');
+        setEnteredEmail('');
     };
 
     return( 
         <form onSubmit={submitHandler}>
             <div className="new-customer__controls">
                 <div className="new-customer__control">
-                    <label>Title</label>
+                    <label>Name</label>
                     <input 
                         type='text' 
-                        value={enteredTitle} 
-                        onChange={titleChangeHandler} 
+                        value={enteredName} 
+                        onChange={nameChangeHandler} 
                     />
                 </div>
                 <div className="new-customer__control">
-                    <label>Amount</label>
+                    <label>Product</label>
                     <input 
-                        type='number' 
-                        min='0.01' 
-                        step='0.01'
-                        value={enteredAmount} 
-                        onChange={amountChangeHandler} 
+                        type='text' 
+                        value={enteredProduct} 
+                        onChange={productChangeHandler} 
                     />
                 </div>
                 <div className="new-customer__control">
@@ -80,6 +100,22 @@ const CustomerForm = (props) => {
                         max='2022-12-31' 
                         value={enteredDate}
                         onChange={dateChangeHandler} 
+                    />
+                </div>
+                <div className="new-customer__control">
+                    <label>Phone Number</label>
+                    <input 
+                        type='text' 
+                        value={enteredPhoneNumber} 
+                        onChange={phoneNumberChangeHandler} 
+                    />
+                </div>
+                <div className="new-customer__control">
+                    <label>Email</label>
+                    <input 
+                        type='text' 
+                        value={enteredEmail} 
+                        onChange={emailChangeHandler} 
                     />
                 </div>
             </div>

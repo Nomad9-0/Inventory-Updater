@@ -25,7 +25,7 @@ const NewCustomer = (props) => {
     return ( 
         <div className='new-customer'>
             {!isEditing && <button onClick={startEditingHandler}>Add New Expense</button>}
-            {isEditing && <CustomerForm onSaveExpenseData={saveCustomerDataHandler} onCancel={stopEditingHandler}/>}
+            {isEditing && <CustomerForm onSaveCustomerData={saveCustomerDataHandler} onCancel={stopEditingHandler}/>}
         </div>
     );
 };
