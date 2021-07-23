@@ -62,7 +62,7 @@ const CustomerForm = (props) => {
             name: enteredName,
             product: enteredProduct,
             //date: new Date(enteredDate),
-            phonenumber: enteredPhoneNumber,
+            phoneNumber: enteredPhoneNumber,
             email: enteredEmail
         };
         props.onSaveCustomerData(customerData);

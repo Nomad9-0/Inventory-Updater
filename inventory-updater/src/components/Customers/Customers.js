@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from '../UI/Card';
+import CustomerItem from "./CustomerItem";
 // import CustomerFilter from "./CustomerFilter";
 import CustomerList from "./CustomerList";
 import './Customers.css';
@@ -21,7 +22,14 @@ const Customers = (props) => {
             <Card className='customers'>
                 {/* <CustomerFilter selected={filteredYear} onChangeFilter={filterChangeHandler} /> */}
                 {/* <CustomerList items={filteredCustomers} />  */}
-                <CustomerList /> 
+                {props.items.map(customer => 
+                    <CustomerItem 
+                        name={customer.name}
+                        product={customer.product}
+                        phoneNumber={customer.phoneNumber}
+                        email={customer.email}    
+                    />
+                )}
             </Card>
         </div>
     );

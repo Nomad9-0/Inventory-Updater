@@ -10,9 +10,8 @@ const CustomerItem = (props) => {
                 {/* <CustomerDate date={props.date} /> */}
                 <div className="customer-item__description">
                     <h2>{props.name}</h2>
-                    <span>{props.id}</span>
                     <p>{props.product}</p>
-                    <p>{props.phonenumber}</p>
+                    <p>{props.phoneNumber}</p>
                     <p>{props.email}</p>
                 </div>
             </Card>
