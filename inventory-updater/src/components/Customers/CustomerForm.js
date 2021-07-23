@@ -4,7 +4,7 @@ import './CustomerForm.css';
 const CustomerForm = (props) => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredProduct, setEnteredProduct] = useState('');
-    const [enteredDate, setEnteredDate] = useState('');
+    // const [enteredDate, setEnteredDate] = useState('');
     const [enteredPhoneNumber, setEnteredPhoneNumber] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
     // const [userInput, setUserInput] = useState({
@@ -32,13 +32,13 @@ const CustomerForm = (props) => {
         // })
     };
 
-    const dateChangeHandler = (event) => {
-        setEnteredDate(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredDate: event.target.value
-        // })
-    };
+    // const dateChangeHandler = (event) => {
+    //     setEnteredDate(event.target.value);
+    //     // setUserInput({
+    //     //     ...userInput,
+    //     //     enteredDate: event.target.value
+    //     // })
+    // };
 
     const phoneNumberChangeHandler = (event) => {
         setEnteredPhoneNumber(event.target.value);
@@ -61,14 +61,14 @@ const CustomerForm = (props) => {
         const customerData = {
             name: enteredName,
             product: enteredProduct,
-            date: new Date(enteredDate),
-            phonenumber: enteredPhoneNumber,
+            //date: new Date(enteredDate),
+            phoneNumber: enteredPhoneNumber,
             email: enteredEmail
         };
         props.onSaveCustomerData(customerData);
         setEnteredName('');
         setEnteredProduct('');
-        setEnteredDate('');
+        // setEnteredDate('');
         setEnteredPhoneNumber('');
         setEnteredEmail('');
     };
@@ -92,7 +92,7 @@ const CustomerForm = (props) => {
                         onChange={productChangeHandler} 
                     />
                 </div>
-                <div className="new-customer__control">
+                {/* <div className="new-customer__control">
                     <label>Date</label>
                     <input 
                         type='date' 
@@ -101,7 +101,7 @@ const CustomerForm = (props) => {
                         value={enteredDate}
                         onChange={dateChangeHandler} 
                     />
-                </div>
+                </div> */}
                 <div className="new-customer__control">
                     <label>Phone Number</label>
                     <input 

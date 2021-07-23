@@ -10,7 +10,8 @@ const NewCustomer = (props) => {
             ...enteredCustomerData,
             id: Math.random().toString()
         };
-        props.onAddCustomer(customerData);
+        props.onAddExpense(customerData);
+        console.log(customerData);
         setIsEditing(false);
     };
 
@@ -24,7 +25,7 @@ const NewCustomer = (props) => {
 
     return ( 
         <div className='new-customer'>
-            {!isEditing && <button onClick={startEditingHandler}>Add New Expense</button>}
+            {!isEditing && <button onClick={startEditingHandler}>Add New Customer</button>}
             {isEditing && <CustomerForm onSaveCustomerData={saveCustomerDataHandler} onCancel={stopEditingHandler}/>}
         </div>
     );
