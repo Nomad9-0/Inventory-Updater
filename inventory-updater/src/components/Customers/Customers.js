@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from '../UI/Card';
 import CustomerItem from "./CustomerItem";
 // import CustomerFilter from "./CustomerFilter";
-import CustomerList from "./CustomerList";
+// import CustomerList from "./CustomerList";
 import './Customers.css';
 
 
@@ -28,6 +28,7 @@ const Customers = (props) => {
                         product={customer.product}
                         phoneNumber={customer.phoneNumber}
                         email={customer.email}    
+                        date={customer.date}
                     />
                 )}
             </Card>

@@ -4,7 +4,7 @@ import './CustomerForm.css';
 const CustomerForm = (props) => {
     const [enteredName, setEnteredName] = useState('');
     const [enteredProduct, setEnteredProduct] = useState('');
-    // const [enteredDate, setEnteredDate] = useState('');
+    const [date, setDate] = useState(new Date());
     const [enteredPhoneNumber, setEnteredPhoneNumber] = useState('');
     const [enteredEmail, setEnteredEmail] = useState('');
     // const [userInput, setUserInput] = useState({
@@ -15,45 +15,22 @@ const CustomerForm = (props) => {
     
     const nameChangeHandler = (event) => {
         setEnteredName(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredTitle: event.target.value
-        // })
-        // setUserInput((prevState) => {
-        //     return { ...prevState, enteredTitle: event.target.value };
-        // });
     };
 
     const productChangeHandler = (event) => {
         setEnteredProduct(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredAmount: event.target.value
-        // })
     };
 
-    // const dateChangeHandler = (event) => {
-    //     setEnteredDate(event.target.value);
-    //     // setUserInput({
-    //     //     ...userInput,
-    //     //     enteredDate: event.target.value
-    //     // })
-    // };
+    const dateChangeHandler = () => {
+        setDate(new Date().toLocaleString('en-US'));
+    };
 
     const phoneNumberChangeHandler = (event) => {
         setEnteredPhoneNumber(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredAmount: event.target.value
-        // })
     };
 
     const emailChangeHandler = (event) => {
         setEnteredEmail(event.target.value);
-        // setUserInput({
-        //     ...userInput,
-        //     enteredAmount: event.target.value
-        // })
     };
 
     const submitHandler = (event) => {
@@ -61,14 +38,14 @@ const CustomerForm = (props) => {
         const customerData = {
             name: enteredName,
             product: enteredProduct,
-            //date: new Date(enteredDate),
             phoneNumber: enteredPhoneNumber,
-            email: enteredEmail
+            email: enteredEmail,
+            date: date
         };
         props.onSaveCustomerData(customerData);
         setEnteredName('');
         setEnteredProduct('');
-        // setEnteredDate('');
+        setDate('');
         setEnteredPhoneNumber('');
         setEnteredEmail('');
     };
@@ -92,16 +69,6 @@ const CustomerForm = (props) => {
                         onChange={productChangeHandler} 
                     />
                 </div>
-                {/* <div className="new-customer__control">
-                    <label>Date</label>
-                    <input 
-                        type='date' 
-                        min='2019-01-01' 
-                        max='2022-12-31' 
-                        value={enteredDate}
-                        onChange={dateChangeHandler} 
-                    />
-                </div> */}
                 <div className="new-customer__control">
                     <label>Phone Number</label>
                     <input 
@@ -121,7 +88,7 @@ const CustomerForm = (props) => {
             </div>
             <div className='new-customer__actions'>
                 <button type="button" onClick={props.onCancel}>Cancel</button>
-                <button type='submit'>Add Customer</button>
+                <button onClick={dateChangeHandler} type='submit'>Add Customer</button>
             </div>
         </form>
     );
