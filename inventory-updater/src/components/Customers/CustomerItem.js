@@ -15,6 +15,10 @@ const CustomerItem = (props) => {
                     <p>{props.email}</p>|
                     <p>{props.date}</p>
                 </div>
+                <div>
+                    <button type="button">Notify</button>
+                    <button type='button'>Delete</button>
+                </div>
             </Card>
         </li>
     );
