@@ -4,6 +4,11 @@ import Card from '../UI/Card';
 import './CustomerItem.css';
 
 const CustomerItem = (props) => {
+
+    const sendNotification = () => {
+        console.log("message send")
+    };
+
     return (
         <li>
             <Card className="customer-item">
@@ -16,8 +21,8 @@ const CustomerItem = (props) => {
                     <p>{props.date}</p>
                 </div>
                 <div>
-                    <button type="button">Notify</button>
-                    <button type='button'>Delete</button>
+                    <button onClick={sendNotification} type="button">Notify</button>
+                    <button onClick={props.onCancel} type='button'>Delete</button>
                 </div>
             </Card>
         </li>

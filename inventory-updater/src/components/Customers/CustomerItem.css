@@ -37,6 +37,34 @@ li {
     padding: 0.5rem;
     border-radius: 12px;
   }
+
+  .customer-item button {
+    font: inherit;
+    cursor: pointer;
+    padding: 1rem 2rem;
+    border: 1px solid #40005d;
+    background-color: #40005d;
+    color: white;
+    border-radius: 12px;
+    margin-right: 1rem;
+  }
+  
+  .customer-item button:hover,
+  .customer-item button:active {
+    background-color: #510674;
+    border-color: #510674;
+  }
+  
+  .customer-item button.alternative {
+    color: #220131;
+    border-color: transparent;
+    background-color: transparent;
+  }
+  
+  .customer-item button.alternative:hover,
+  .customer-item button.alternative:active {
+    background-color: #ddb3f8;
+  }
   
   @media (min-width: 580px) {
     .customer-item__description {
