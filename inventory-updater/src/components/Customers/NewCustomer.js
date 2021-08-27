@@ -6,9 +6,11 @@ const NewCustomer = (props) => {
     const [isEditing, setIsEditing] = useState(false)
 
     const saveCustomerDataHandler = (enteredCustomerData) => {
+        const id = Math.floor(Math.random() * 100000000000)
+
         const customerData = {
             ...enteredCustomerData,
-            id: Math.random().toString()
+            id: id.toString()
         };
         props.onAddExpense(customerData);
         console.log(customerData);

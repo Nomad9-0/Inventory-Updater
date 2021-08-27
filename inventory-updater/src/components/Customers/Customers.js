@@ -29,6 +29,7 @@ const Customers = (props) => {
                         phoneNumber={customer.phoneNumber}
                         email={customer.email}    
                         date={customer.date}
+                        key={customer.id}
                     />
                 )}
             </Card>

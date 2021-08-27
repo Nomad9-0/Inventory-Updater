@@ -11,39 +11,7 @@ const DUMMY_DATA = [
     phoneNumber: '555-555-5555',
     email: 'test@email.com',
     date: '7/19/2021'
-  },
-  {
-    id: "p2",
-    name: "Karen Smith",
-    product: 'Topical',
-    phoneNumber: '555-555-5556',
-    email: 'test2@email.com',
-    date: '6/11/2021'
-  },
-  {
-    id: "p3",
-    name: "Jesus Zepeda",
-    product: 'Flower',
-    phoneNumber: '555-555-5557',
-    email: 'test3@email.com',
-    date: '7/1/2021'
-  },
-  {
-    id: "p4",
-    name: "Mike Powell",
-    product: 'Drink',
-    phoneNumber: '555-555-5558',
-    email: 'test4@email.com',
-    date: '5/12/2020'
-  },
-  {
-    id: "p5",
-    name: "Zofia Kapkan",
-    product: 'Hat',
-    phoneNumber: '555-555-5559',
-    email: 'test5@email.com',
-    date: '7/15/2020'
-  },
+  }
 ];
 
 const App = () => {

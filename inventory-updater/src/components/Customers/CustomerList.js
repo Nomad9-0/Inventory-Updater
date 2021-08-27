@@ -5,6 +5,7 @@ const CustomerList = props => {
     // if (props.items.length === 0) {
     //     return <h2 className='customer-list__fallback'>Found no Customers</h2>
     // }
+    
 
     return (
         <ul className="customers-list">
