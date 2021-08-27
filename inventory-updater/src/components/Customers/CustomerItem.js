@@ -1,13 +1,20 @@
-import React from 'react';
+import React, {useState} from 'react';
 //import CustomerDate from './CustomerDate';
 import Card from '../UI/Card';
 import './CustomerItem.css';
 
 const CustomerItem = (props) => {
+    const [removeCustomer, setRemoveCustomer] = useState([]);
 
     const sendNotification = () => {
         console.log("message send")
     };
+
+    const removeCustomers = (e) => {
+        // const removeCus = e.target.getAttribute("name");
+        // setRemoveCustomer(removeCustomer.filter(item => item.name !== removeCus));
+        console.log(props.email) // must target id
+    }
 
     return (
         <li>
@@ -22,7 +29,7 @@ const CustomerItem = (props) => {
                 </div>
                 <div>
                     <button onClick={sendNotification} type="button">Notify</button>
-                    <button onClick={props.onCancel} type='button'>Delete</button>
+                    <button onClick={removeCustomers} type='button'>Delete</button>
                 </div>
             </Card>
         </li>
